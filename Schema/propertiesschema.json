@@ -1,0 +1,245 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Properties",
+  "description": "Properties.yaml schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": ["string","null"],
+      "description": "Uniqe name for the project"
+    },
+    "aws": {
+      "type": ["array","null"],
+      "description": "",
+      "items": {
+        "type": "object",
+        "properties": {
+          "awsCredentialsId": {
+            "type": ["string","null"],
+            "pattern": "_.$",
+            "description": ""
+          },
+          "awsRegion": {
+            "type": ["string","null"],
+            "description": ""
+          },
+          "awsOutput": {
+            "type": ["string","null"],
+            "description": ""
+          }
+        },
+        "propertyNames": true,
+        "required": [
+          "awsCredentialsId",
+          "awsRegion",
+          "awsOutput"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "genexus": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": ["string","null"],
+          "description": "File path or Url to the kb directory"
+        },
+        "customBuild": {
+          "type": ["string","null"],
+          "description": "Custom Build name existing in genexus.exe.config / It can be null"
+        },
+        "androidSDK": {
+          "type": "boolean",
+          "description": "[true|false]"
+        }
+      },
+      "propertyNames": true,
+      "required": [
+        "uri",
+        "customBuild",
+        "androidSDK"
+      ],
+      "additionalProperties": true
+    },
+
+    "build": {
+      "type": "object",
+      "description": "",
+      "properties": {
+        "server": {
+          "type": [
+            "object"
+          ],
+          "description": "",
+          "properties": {
+            "url": {
+              "type": ["string","null"],
+              "description": "Gxserver Url"
+            },
+            "kbName": {
+              "type": ["string","null"],
+              "description": "KbName in Gxserver"
+            },
+            "kbVersion": {
+              "type": ["string","null"],
+              "description": "KbVersion in Gxserver"
+            },
+            "kbDbServerInstance":{
+              "type": ["string","null"],
+              "description": ""
+            },
+            "credentialsId": {
+              "type": ["string","null"],
+              "description": "Prefix: <name>_gxserver //uniqe credentials id existing in Jenkins Credentials Scope"
+            },
+            "removeWorkingCopy": {
+              "type": "boolean",
+              "description": "No reorg will be done in any environment if this option is true"
+            }
+        
+          },
+          "propertyNames": true,
+          "required": [
+            "url",
+            "kbName",
+            "kbVersion",
+            "kbDbServerInstance",
+            "credentialsId",
+            "removeWorkingCopy"
+          ],
+          "additionalProperties": true
+        },
+        "forceUpdateModules": {
+          "description": "",
+          "type": ["array","null"],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "environments": {
+          "type": ["array","null"],
+          "description": "Relative file path from git repo root to acces to <environmentname>.yaml",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "minItems": 1
+          }
+        },
+        "notify": {
+          "description": "Emails to notify  Format: Email1,Email2,...",
+          "type": "string"
+        }
+      },
+      "propertyNames": true,
+      "required": ["environments","server","notify","forceUpdateModules"],
+      "additionalProperties": true
+    },
+    "databases": {
+      "type": ["array","null"],
+      "description": "",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": ["string","null"],
+            "description": ""
+          },
+          "name": {
+            "type": ["string","null"],
+            "description": ""
+          },
+          "endpoint": {
+            "type": ["string","null"],
+            "description": ""
+          }, 
+  
+          "port":{
+            "type":"integer",
+            "description": ""
+          },
+          "credentialsId": {
+            "type": ["string","null"],
+            "description": "Uniqe credentials id existing in Jenkins Credentials Scope"
+          }
+        },
+        "propertyNames": true,
+        "required": [
+          "id",
+          "name",
+          "endpoint",
+          "port",
+          "credentialsId"
+        ],
+        "additionalProperties": true
+      }
+    },
+
+    "modules": {
+      "type": ["array","null"],
+      "description": "Relative file path from git repo root to acces to <environmentname>.yaml",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": ["string","null"],
+            "description": ""
+          },
+
+          "cshrpFilePath": {
+            "type": ["string","null"],
+            "description": ""
+          },
+
+          "javaFilePath": {
+            "type": ["string","null"],
+            "description": ""
+          },
+
+          "netCoreFilePath": {
+            "type": ["string","null"],
+            "description": ""
+          }
+
+        },
+        "required": [
+          "name",
+          "cshrpFilePath",
+          "javaFilePath",
+          "netCoreFilePath"
+        ],
+        "minItems": 1
+      }
+    }
+    
+  },
+
+  
+  "propertyNames": true,
+  "required": [
+    "name",
+    "build",
+    "genexus",
+    "aws",
+    "databases"
+
+
+    
+  ],
+  "additionalProperties": true,
+  "default": {}
+}

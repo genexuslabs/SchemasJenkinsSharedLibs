@@ -1,0 +1,126 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Java/Net Environment",
+      "description": "<environmentname>.yaml schema",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": ["string", "null"],
+          "description": "Environment name"
+        },
+        "jdkInstallationId":{
+          "enum": ["jdk8","jdk11","jdk17", false],
+          "description": ""
+        },
+        "applyReorganization":{
+          "type":"boolean",
+          "description": ""
+        },
+        "reorganizationReview":{
+          "type":"boolean",
+          "description": ""
+        },
+        "onPostReorganization":{
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "databaseId":{
+          "type":["string", "null"],
+          "description": ""
+        },
+        "gam":{
+          "description": "Only if KB has GAM",
+          "type":["object","boolean"],
+          "properties": {
+            "appGAMfile":{
+              "type":["string", "null"],
+              "description": "Relative file path to application.gam"
+            },
+            "connGAMfile":{
+              "type":["string", "null"],
+              "description": "Relative file path to connection.gam"
+              
+            },
+
+            "databaseId":{
+              "type":["string", "null"],
+              "description": ""
+            }
+          },
+          "required": [
+            "appGAMfile", "connGAMfile","databaseId"],
+            "additionalProperties": true,
+            "default": {},
+            "propertyNames": true
+            
+
+        },
+        "onPostScript":{
+          "type": ["string", "null"],
+          "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostScript"
+        },
+        "serviceURL":{
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "testing":{
+          "type":["array","null"],
+          "description": "Relative file path to <deploymentUnit>.groovy from git repo root",
+          "items":{
+           "type":"object",
+           "properties": {
+            "id":{
+              "type":["string", "null"],
+              "description": ""
+            },
+            "objects":{
+              "type":["string", "null"],
+              "description": ""
+            },
+            "browser":{
+              "type":["string", "null"],
+              "description": ""
+            },
+            "arguments":{
+              "type":["string", "null"],
+              "description": ""
+            }
+           },
+            "required": ["id","objects","browser","arguments"],
+            "minItems": 1
+          }
+        },
+        "deploymentUnits":{
+          "type":["array","null"],
+          "description": "Relative file path to <deploymentUnit>.groovy from git repo root",
+          "items":{
+           "type":"object",
+           "properties": {
+            "path":{
+              "type":["string", "null"],
+              "description": "Relative file path to <deploymentUnit>.groovy from git repo root"
+            }
+           },
+            "required": ["path"],
+            "minItems": 1
+          }
+        }
+        
+
+    },
+    "required": [
+    "name",
+    "jdkInstallationId",
+    "applyReorganization",
+    "reorganizationReview",
+    "onPostReorganization",
+    "databaseId",
+    "onPostScript",
+    "deploymentUnits",
+    "gam"
+   ],
+    "additionalProperties": true,
+    "default": {},
+    "propertyNames": true
+    
+    }
