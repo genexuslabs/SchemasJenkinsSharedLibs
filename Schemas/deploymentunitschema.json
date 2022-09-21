@@ -1,63 +1,34 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-      "description": "deployment units schema",
-      "type": "object",
-      "properties": {
-        
-      },
-
-    
-
-    "allOf": [{
-      "if": 
-      {
-        "properties": { "deployType": { "const": "AWS-Serverless-Service" } },
-        "required": ["deployType"],
-        "title": "AWS-Serverless-Service"
-      },
-      "then": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "deployment units schema",
+  "type": "object",
+  "properties": {
+  },
+  "allOf": [{
+    "if":{
+      "properties": { "deployType": { "const": "AWS-Serverless-Service" } },
+      "required": ["deployType"],
+      "title": "AWS-Serverless-Service"
+    },"then":{
         "$ref": "awsserverlessschema.json"
-          
-        
-        }
-
-        
-    },
-    {
-      "if": 
-      {
-        "properties": { "deployType": { "const": "DockerImage" } },
-        "required": ["deployType"],
-        "title": "DockerImage"
-        
-        
-        
-        
-      },
-      "then": {
-        
+      }
+  },
+  {
+    "if":{
+      "properties": { "deployType": { "const": "DockerImage" } },
+      "required": ["deployType"],
+      "title": "DockerImage"
+      },"then": {
         "$ref": "dockerimageschema.json"
-        
-        }
-    },
-
-    {
-      "if": 
-      {
-        "required": ["deployType"],
-        "properties": { "deployType": { "const": "Angular-Service" } },
-        "title": "Angular-Service"
-
-        
-      },
-      "then": {
-        
+      }
+  },
+  {
+    "if":{
+      "required": ["deployType"],
+      "properties": { "deployType": { "const": "Angular-Service" } },
+      "title": "Angular-Service"
+    },"then": {
         "$ref": "angularserviceschema.json"
-        
-        }
-    }
-    
-    
-    
-    ]
-    }
+      }
+  }]
+}

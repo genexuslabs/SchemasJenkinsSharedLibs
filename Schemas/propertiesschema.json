@@ -14,12 +14,12 @@
       "items": {
         "type": "object",
         "properties": {
-          "awsCredentialsId": {
+          "awsCredentialsId":{
             "type": ["string","null"],
             "pattern": "_.$",
             "description": ""
           },
-          "awsRegion": {
+          "awsRegion":{
             "type": ["string","null"],
             "description": ""
           },
@@ -28,13 +28,13 @@
             "description": ""
           }
         },
-        "propertyNames": true,
-        "required": [
+          "propertyNames": true,
+          "required": [
           "awsCredentialsId",
           "awsRegion",
           "awsOutput"
-        ],
-        "additionalProperties": true
+          ],
+      "additionalProperties": true
       }
     },
     "genexus": {
@@ -61,15 +61,12 @@
       ],
       "additionalProperties": true
     },
-
     "build": {
       "type": "object",
       "description": "",
       "properties": {
         "server": {
-          "type": [
-            "object"
-          ],
+          "type": ["object"],
           "description": "",
           "properties": {
             "url": {
@@ -96,18 +93,10 @@
               "type": "boolean",
               "description": "No reorg will be done in any environment if this option is true"
             }
-        
           },
-          "propertyNames": true,
-          "required": [
-            "url",
-            "kbName",
-            "kbVersion",
-            "kbDbServerInstance",
-            "credentialsId",
-            "removeWorkingCopy"
-          ],
-          "additionalProperties": true
+            "propertyNames": true,
+            "required": ["url","kbName","kbVersion","kbDbServerInstance","credentialsId","removeWorkingCopy"],
+            "additionalProperties": true
         },
         "forceUpdateModules": {
           "description": "",
@@ -119,9 +108,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": ["name"]
           }
         },
         "environments": {
@@ -134,9 +121,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "path"
-            ],
+            "required": ["path"],
             "minItems": 1
           }
         },
@@ -145,9 +130,9 @@
           "type": "string"
         }
       },
-      "propertyNames": true,
-      "required": ["environments","server","notify","forceUpdateModules"],
-      "additionalProperties": true
+        "propertyNames": true,
+        "required": ["environments","server","notify","forceUpdateModules"],
+        "additionalProperties": true
     },
     "databases": {
       "type": ["array","null"],
@@ -167,7 +152,6 @@
             "type": ["string","null"],
             "description": ""
           }, 
-  
           "port":{
             "type":"integer",
             "description": ""
@@ -188,7 +172,6 @@
         "additionalProperties": true
       }
     },
-
     "modules": {
       "type": ["array","null"],
       "description": "Relative file path from git repo root to acces to <environmentname>.yaml",
@@ -199,22 +182,18 @@
             "type": ["string","null"],
             "description": ""
           },
-
           "cshrpFilePath": {
             "type": ["string","null"],
             "description": ""
           },
-
           "javaFilePath": {
             "type": ["string","null"],
             "description": ""
           },
-
           "netCoreFilePath": {
             "type": ["string","null"],
             "description": ""
           }
-
         },
         "required": [
           "name",
@@ -227,8 +206,6 @@
     }
     
   },
-
-  
   "propertyNames": true,
   "required": [
     "name",
@@ -236,9 +213,6 @@
     "genexus",
     "aws",
     "databases"
-
-
-    
   ],
   "additionalProperties": true,
   "default": {}
