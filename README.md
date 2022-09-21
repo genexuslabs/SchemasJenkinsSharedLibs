@@ -2,9 +2,13 @@
 
 To make building properties files easier we are going to use a new tool called json.schemas.
 
-This tool allow us to have a kind of syntax validation or auto-completion as you work on your properties files And thus be able to have a better experience in the development.
+This tool allow us to have a kind of syntax validation or auto-completion as you work on your properties files and thus be able to have a better experience in the development.
 
-However, this is a way to get partial auto-completion for Workflows in VS Code.
+In this case we are going to be using the schemas to autocomplete and correct the syntax of the property files that provide us with the necessary data to be able to build Apps with the Jenkins Shared Libraries developed by GeneXus 
+
+For more information about the libraries you can check here [Shared Libraries](https://iwiki.genexus.com/wiki.aspx?31147,KBBuilder+Jenkins+Shared+Libraries)
+
+
 
 ## How it Works ?
 
@@ -26,9 +30,7 @@ Open `Extensions` by going to `File->Preferences->Extensions` or use keyboard sh
 
 Look for YAML and install YAML Language Support by Red Hat
 
-<img src="images\redhatplugin.png">
-
-### Apply JSON Schame on your YAML files
+### Apply JSON Schemas on your YAML files
 Depending on the type of file we are working with, we will have a schema that will help us.
 
 - Properties.yaml
@@ -59,9 +61,6 @@ To implement it in our file we will have to place the following signature on the
 
 
 Pressing `ctrl + space` will show us the options to autocomplete
-
-## Why is it partial?
-Remember, I said partial autocompletion and the reason is that the property schema is always being updated. And you don't always have the latest syntax.
 
 
 
