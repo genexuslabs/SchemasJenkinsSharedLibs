@@ -55,7 +55,7 @@ For the case of Environmentname.yaml we will have to use: link al schema
 For the case of DeploymentUnits.yaml we will have to use: link al schema
 
 
-To implement it in our file we will have to place the following signature on the first line of our file: `#yaml-language-server: $schema=<url>`
+To implement it in our file we will have to place the following signature on the first line of our file: `# yaml-language-server: $schema=<url>`
 
 <img src="images\sgnatureyaml.png">
 
