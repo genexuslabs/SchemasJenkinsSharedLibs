@@ -10,7 +10,7 @@
         "properties": { "title": { "const": "Properties" } },
         "title": "Properties"
       },"then":{
-          "$ref": "propertiesschema.json"
+          "$ref": "./propertiesschema.json"
           
         }
     },
