@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Net/Java Environments",
+  "description": "Autocomplete schemas",
   "type": "object",
   "properties": {
   },
   "oneOf": [
     {
       "if":{
-        "properties": { "title": { "const": "Properties" } },
-        "title": "Properties"
+        "title": "Properties",
+        "properties": { "title": { "const": "Properties" } }
       },"then":{
-          "$ref": "./propertiesschema.json"
+          "$ref": "https://raw.githubusercontent.com/genexuslabs/SchemasJenkinsSharedLibs/main/Schemas/propertiesschema.json"
           
         }
     },
