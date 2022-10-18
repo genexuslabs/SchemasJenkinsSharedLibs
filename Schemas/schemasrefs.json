@@ -10,7 +10,7 @@
         "title": "Properties",
         "properties": { "title": { "const": "Properties" } }
       },"then":{
-          "$ref": "https://raw.githubusercontent.com/genexuslabs/SchemasJenkinsSharedLibs/main/Schemas/propertiesschema.json"
+          "$ref": "Schemas/propertiesschema.json"
           
         }
     },
