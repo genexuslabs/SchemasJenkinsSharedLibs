@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "type": ["string","null"],
+      "type": "string",
       "description": "Uniqe name for the project"
     },
     "aws": {
@@ -15,16 +15,15 @@
         "type": "object",
         "properties": {
           "awsCredentialsId":{
-            "type": ["string","null"],
-            "pattern": "_.$",
+            "type": "string",
             "description": ""
           },
           "awsRegion":{
-            "type": ["string","null"],
+            "type": "string",
             "description": ""
           },
           "awsOutput": {
-            "type": ["string","null"],
+            "type": "string",
             "description": ""
           }
         },
@@ -41,7 +40,7 @@
       "type": "object",
       "properties": {
         "uri": {
-          "type": ["string","null"],
+          "type": "string",
           "description": "File path or Url to the kb directory"
         },
         "customBuild": {
@@ -70,32 +69,28 @@
           "description": "",
           "properties": {
             "url": {
-              "type": ["string","null"],
+              "type": "string",
               "description": "Gxserver Url"
             },
             "kbName": {
-              "type": ["string","null"],
+              "type": "string",
               "description": "KbName in Gxserver"
             },
             "kbVersion": {
-              "type": ["string","null"],
+              "type": "string",
               "description": "KbVersion in Gxserver"
             },
             "kbDbServerInstance":{
-              "type": ["string","null"],
+              "type": "string",
               "description": ""
             },
             "credentialsId": {
-              "type": ["string","null"],
-              "description": "Prefix: <name>_gxserver //uniqe credentials id existing in Jenkins Credentials Scope"
-            },
-            "removeWorkingCopy": {
-              "type": "boolean",
-              "description": "No reorg will be done in any environment if this option is true"
+              "type": "string",
+              "description": "Uniqe credentials id existing in Jenkins Credentials Scope"
             }
           },
             "propertyNames": true,
-            "required": ["url","kbName","kbVersion","kbDbServerInstance","credentialsId","removeWorkingCopy"],
+            "required": ["url","kbName","kbVersion","kbDbServerInstance","credentialsId"],
             "additionalProperties": true
         },
         "forceUpdateModules": {
@@ -108,9 +103,14 @@
                 "type": "string"
               }
             },
-            "required": ["name"]
+            "required": ["name"],
+            "minItems": 1
           }
         },
+        "removeWorkingCopy": {
+          "type": "boolean",
+          "description": "No reorg will be done in any environment if this option is true"
+        },  
         "environments": {
           "type": ["array","null"],
           "description": "Relative file path from git repo root to acces to <environmentname>.yaml",
@@ -127,11 +127,11 @@
         },
         "notify": {
           "description": "Emails to notify  Format: Email1,Email2,...",
-          "type": "string"
+          "type": ["string","null"]
         }
       },
         "propertyNames": true,
-        "required": ["environments","server","notify","forceUpdateModules"],
+        "required": ["environments","server","notify","forceUpdateModules","removeWorkingCopy"],
         "additionalProperties": true
     },
     "databases": {
@@ -141,15 +141,15 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": ["string","null"],
+            "type": "string",
             "description": ""
           },
           "name": {
-            "type": ["string","null"],
+            "type": "string",
             "description": ""
           },
           "endpoint": {
-            "type": ["string","null"],
+            "type": "string",
             "description": ""
           }, 
           "port":{
@@ -157,7 +157,7 @@
             "description": ""
           },
           "credentialsId": {
-            "type": ["string","null"],
+            "type": "string",
             "description": "Uniqe credentials id existing in Jenkins Credentials Scope"
           }
         },
@@ -171,40 +171,7 @@
         ],
         "additionalProperties": true
       }
-    },
-    "modules": {
-      "type": ["array","null"],
-      "description": "Relative file path from git repo root to acces to <environmentname>.yaml",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": ["string","null"],
-            "description": ""
-          },
-          "cshrpFilePath": {
-            "type": ["string","null"],
-            "description": ""
-          },
-          "javaFilePath": {
-            "type": ["string","null"],
-            "description": ""
-          },
-          "netCoreFilePath": {
-            "type": ["string","null"],
-            "description": ""
-          }
-        },
-        "required": [
-          "name",
-          "cshrpFilePath",
-          "javaFilePath",
-          "netCoreFilePath"
-        ],
-        "minItems": 1
-      }
     }
-    
   },
   "propertyNames": true,
   "required": [

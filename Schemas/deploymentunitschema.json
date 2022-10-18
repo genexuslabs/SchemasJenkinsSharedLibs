@@ -30,5 +30,25 @@
     },"then": {
         "$ref": "angularserviceschema.json"
       }
-  }]
+  },
+  {
+    "if":{
+      "required": ["deployType"],
+      "properties": { "deployType": { "const": "DockerDaemon" } },
+      "title": "DockerDaemon"
+    },"then": {
+        "$ref": "dockerdaemonschema.json"
+      }
+  },
+  {
+    "if":{
+      "required": ["deployType"],
+      "properties": { "deployType": { "const": "Services" } },
+      "title": "Services"
+    },"then": {
+        "$ref": "servicesschema.json"
+      }
+  }
+
+]
 }

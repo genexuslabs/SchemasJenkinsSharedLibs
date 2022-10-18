@@ -5,63 +5,69 @@
   "type": "object",
   "properties": {
     "name": {
-      "type": ["string", "null"],
+      "type": "string", 
       "description": "Environment name"
     },
     "jdkInstallationId":{
-      "enum": ["jdk8","jdk11","jdk17", false],
-      "description": ""
+      "enum": ["jdk8","jdk11","jdk17", null],
+      "description": "Only For Java Envs"
     },
-    "applyReorganization":{
-      "type":"boolean",
-      "description": ""
-    },
-    "reorganizationReview":{
-      "type":"boolean",
-      "description": ""
-    },
-    "onPostReorganization":{
+    "customRootDirectory":{
       "type": ["string", "null"],
-      "description": ""
+      "description": "Only for Java Envs"
     },
-    "databaseId":{
-      "type":["string", "null"],
-      "description": ""
-    },
-    "gam":{
-      "description": "Only if KB has GAM",
-      "type":["object","boolean"],
-      "properties":{
-        "appGAMfile":{
-          "type":["string", "null"],
-          "description": "Relative file path to application.gam"
-        },
-        "connGAMfile":{
-          "type":["string", "null"],
-          "description": "Relative file path to connection.gam"
-        },
+    "reorganizeTables":{
+      "type":["object","null"],
+      "description": "",
+      "properties": {
+
         "databaseId":{
-          "type":["string", "null"],
+          "type":"string",
+          "description": ""
+        },
+        "gam": {
+          "description": "",
+          "type": ["object","null"],
+          "properties": {
+            "databaseId": {
+              "type": "string"
+            }
+          },
+            "required": ["databaseId"]
+        },
+        "gxflow":{
+          "type": ["string", "null"],
+          "description": ""
+        },
+        "reorganizationReview":{
+          "type":"boolean",
+          "description": ""
+        },
+        "onPostReorganization":{
+          "type": ["string", "null"],
           "description": ""
         }
+
       },
       "required": [
-        "appGAMfile", "connGAMfile","databaseId"],
-        "additionalProperties": true,
-        "default": {},
-        "propertyNames": true
+        "databaseId",
+        "gam",
+        "gxflow",
+        "reorganizationReview",
+        "onPostReorganization"
+      ]
     },
-    "onPostScript":{
+    "onPostBuildEnvironment":{
       "type": ["string", "null"],
       "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostScript"
     },
-    "serviceURL":{
+    "servicesURL":{
       "type": ["string", "null"],
       "description": ""
     },
     "testing":{
       "type":["array","null"],
-      "description": "Relative file path to <deploymentUnit>.groovy from git repo root",
+      "description": "",
       "items":{
         "type":"object",
         "properties": {
@@ -102,17 +108,17 @@
       }
     }
   },
-  "required": [
-  "name",
-  "jdkInstallationId",
-  "applyReorganization",
-  "reorganizationReview",
-  "onPostReorganization",
-  "databaseId",
-  "onPostScript",
-  "deploymentUnits",
-  "gam"
-  ],
+  
+    "required": [
+    "name",
+    "jdkInstallationId",
+    "customRootDirectory",
+    "reorganizeTables",
+    "onPostBuildEnvironment",
+    "servicesURL",
+    "testing",
+    "deploymentUnits"
+    ],
   "additionalProperties": true,
   "default": {},
   "propertyNames": true

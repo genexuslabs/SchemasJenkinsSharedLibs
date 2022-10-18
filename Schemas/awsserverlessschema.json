@@ -5,11 +5,11 @@
   "type": "object",
   "properties":{
     "name": {
-      "type": ["string", "null"],
+      "type": "string",
       "description": "DeploymentUnit name"
     },
     "deployType":{
-      "type":["string", "null"],
+      "type":"string",
       "enum": ["AWS-Serverless-Service", "DockerImage", "Angular-Service"],
       "description": "",
       "default": "AWS-Serverless-Service"
@@ -18,60 +18,37 @@
       "type":["string", "null"],
       "description": "Relative file path to <extensibility>.groovy from git repo root with method onPreDeploy"
     },
-    "customYML":{
-      "type":["string", "null"],
-      "description": "",
-      "default": "no-generate"
-    },
     "applicationServer":{
-      "type":["string", "null"],
+      "type":"string", 
       "description": ""
     },
     "applicationName":{
-      "type":["string", "null"],
+      "type":"string", 
       "description": ""
     },
     "onPostPackage":{
       "type":["string","null"],
       "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostPackage"
     },
+    "onPostSync":{
+      "type":["string","null"],
+      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostPackage"
+    },
     
     "publishType":{
-      "type":["array","boolean"],
-      "description": "",
-      "items":{
-        "type":"object",
-        "properties": {
-          "id":{
-            "type":["string", "null"],
-            "description": "Uniqe"
-          },
-          "name":{
-          "type":["string", "null"],
-          "description": ""
-          },
-          "awsBucket":{
-            "type":["string", "null"],
-            "description": ""
-          },
-          "awsProfile":{
-            "type":["string", "null"],
-            "description": ""
-          }
-        },
-        "required": ["id","name","awsBucket","awsProfile"],
-        "minItems": 1
-      }
+      "type":"null",
+      "description": ""
     }
   },
+  
   "required": [
   "name",
   "deployType",
   "onPrePackage",
-  "customYML",
   "applicationServer",
   "applicationName",
   "onPostPackage",
+  "onPostSync",
   "publishType"],
   "additionalProperties": true,
   "default": {},
