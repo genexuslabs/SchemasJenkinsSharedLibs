@@ -1,7 +1,7 @@
 {   
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "<Angular-Service>.yaml schema",
-  "title": "Angular-Service",
+  "title": "Angular-Service DU",
   "type": "object",
   "properties": {
     "name": {
