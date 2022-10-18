@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Net/Java Environments",
+  "type": "object",
+  "properties": {
+  },
+  "oneOf": [
+    {
+      "if":{
+        "properties": { "title": { "const": "Properties" } },
+        "title": "Properties"
+      },"then":{
+          "$ref": "propertiesschema.json"
+          
+        }
+    },
+    {
+    "if":{
+      "properties": { "title": { "const": "Java Environment" } },
+      "title": "Java Environment"
+    },"then":{
+        "$ref": "javaenvironmentschema.json"
+      }
+  },
+  {
+    "if":{
+      "properties": { "title": { "const": "Net Environment" } },
+      "title": "Net Environment"
+    },"then":{
+        "$ref": "netenvironmentschema.json"
+      }
+  },
+  {
+    "if":{
+      "properties": { "title": { "const": "Deployment units schemas" } },
+      "title": "Deployment units schemas"
+    },"then":{
+        "$ref": "deploymentunitschema.json"
+      }
+  }
+
+
+]
+}

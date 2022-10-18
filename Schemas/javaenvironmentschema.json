@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Java/Net Environment",
+  "title": "Java Environment",
   "description": "<environmentname>.yaml schema",
   "type": "object",
   "properties": {

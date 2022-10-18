@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "aws-serverless-service",
+  "title": "Aws-serverless-service",
   "description": "<aws-serverless-du>.yaml schema",
   "type": "object",
   "properties":{
@@ -10,7 +10,6 @@
     },
     "deployType":{
       "type":"string",
-      "enum": ["AWS-Serverless-Service", "DockerImage", "Angular-Service"],
       "description": "",
       "default": "AWS-Serverless-Service"
     },

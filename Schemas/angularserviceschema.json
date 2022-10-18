@@ -10,7 +10,7 @@
     },
     "deployType":{
       "type":"string",
-      "enum": ["AWS-Serverless-Service", "DockerImage", "Angular-Service","Services","DockerDaemon"],
+      "default": "Angular-Service",
       "description": ""
     },
     "onPrePackage":{
