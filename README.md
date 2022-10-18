@@ -48,11 +48,11 @@ Depending on the type of file we are working with, we will have a schema that wi
 
 
 
-For the case of Properties.yaml we will have to use: link al schema
+For the case of Properties.yaml we will have to use: https://raw.githubusercontent.com/genexuslabs/SchemasJenkinsSharedLibs/main/Schemas/propertiesschema.json
 
-For the case of Environmentname.yaml we will have to use: link al schema
+For the case of Environmentname.yaml we will have to use: lhttps://raw.githubusercontent.com/genexuslabs/SchemasJenkinsSharedLibs/main/Schemas/environmentschema.json
 
-For the case of DeploymentUnits.yaml we will have to use: link al schema
+For the case of DeploymentUnits.yaml we will have to use: https://raw.githubusercontent.com/genexuslabs/SchemasJenkinsSharedLibs/main/Schemas/deploymentunitschema.json
 
 
 To implement it in our file we will have to place the following signature on the first line of our file: `# yaml-language-server: $schema=<url>`
