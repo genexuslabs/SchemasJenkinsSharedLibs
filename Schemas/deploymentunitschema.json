@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
   },
-  "allOf": [{
+  "oneOf": [{
     "if":{
       "properties": { "deployType": { "const": "AWS-Serverless-Service" } },
       "title": "AWS-Serverless-Service"
