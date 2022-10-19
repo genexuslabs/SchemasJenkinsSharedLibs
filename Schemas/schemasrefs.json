@@ -2,43 +2,12 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Autocomplete schemas",
   "type": "object",
-  "properties": {
-  },
-  "oneOf": [
-    {
-      "if":{
-        "title": "Properties",
-        "properties": { "title": { "const": "Properties" } }
-      },"then":{
-          "$ref": "Schemas/propertiesschema.json"
-          
-        }
-    },
-    {
-    "if":{
-      "properties": { "title": { "const": "Java Environment" } },
-      "title": "Java Environment"
-    },"then":{
-        "$ref": "javaenvironmentschema.json"
-      }
-  },
-  {
-    "if":{
-      "properties": { "title": { "const": "Net Environment" } },
-      "title": "Net Environment"
-    },"then":{
-        "$ref": "netenvironmentschema.json"
-      }
-  },
-  {
-    "if":{
-      "properties": { "title": { "const": "Deployment units schemas" } },
-      "title": "Deployment units schemas"
-    },"then":{
-        "$ref": "deploymentunitschema.json"
-      }
-  }
-
-
-]
+  "properties": {},
+  "oneOf":[
+    { "$ref": "propertiesschema.json" },
+    { "$ref": "netenvironmentschema.json" },
+    { "$ref": "javaenvironmentschema.json" },
+    { "$ref": "deploymentunitschema.json" }
+  ]
+    
 }
