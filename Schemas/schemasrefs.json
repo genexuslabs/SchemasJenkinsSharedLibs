@@ -2,7 +2,16 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Autocomplete schemas",
   "type": "object",
-  "$ref": "propertiesschema.json"
-  
-  }
+  "properties": {},
+  "anyOf":[
+    { "$ref": "propertiesschema.json" },
+    { "$ref": "netenvironmentschema.json" },
+    { "$ref": "javaenvironmentschema.json" },
+    { "$ref": "dockerdaemonschema.json" },
+    { "$ref": "servicesschema.json" },
+    { "$ref": "angularserviceschema.json" },
+    { "$ref": "dockerimageschema.json" }
+
+  ]
     
+}
