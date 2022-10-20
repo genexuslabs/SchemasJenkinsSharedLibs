@@ -15,7 +15,7 @@
     },
     "onPrePackage":{
       "type":["string","null"],
-      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPreDeploy"
+      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPrePackage"
     },
     "customSyncPath":{
       "type":["string","null"],
@@ -73,7 +73,7 @@
     },
     "onPostSync":{
       "type":["string","null"],
-      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostPackage"
+      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostSync"
     },
     "publishType":{
       "type":["array", "null"],

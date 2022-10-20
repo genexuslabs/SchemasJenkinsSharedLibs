@@ -59,7 +59,7 @@
     },
     "onPostBuildEnvironment":{
       "type": ["string", "null"],
-      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostScript"
+      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostBuildEnvironment"
     },
     "servicesURL":{
       "type": ["string", "null"],
