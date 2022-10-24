@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Aws-serverless-service DU",
-  "description": "<aws-serverless-du>.yaml schema",
+  "title": "DU Aws-serverless-service",
+  "description": "aws-serverless-du.yaml schema",
   "type": "object",
   "properties":{
     "name": {

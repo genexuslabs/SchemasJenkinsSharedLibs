@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Net Environment",
-  "description": "<environmentname>.yaml schema",
+  "title": "Env NetCore ",
+  "description": "environmentname.yaml schema",
   "type": "object",
   "properties": {
     "name": {
@@ -28,8 +28,14 @@
             "required": ["databaseId"]
         },
         "gxflow":{
-          "type": ["string", "null"],
-          "description": ""
+          "description": "",
+          "type": ["object","null"],
+          "properties": {
+            "databaseId": {
+              "type": "string"
+            }
+          },
+            "required": ["databaseId"]
         },
         "reorganizationReview":{
           "type":"boolean",
