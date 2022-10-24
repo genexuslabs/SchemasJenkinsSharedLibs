@@ -73,7 +73,7 @@
       },
       "schedule":{
         "type":"string",
-        "description": "Custom name for the DockerImage"
+        "description": ""
       },
       "entrypoint":{
         "type":"string",
@@ -183,5 +183,12 @@
         }
       }
     },
-    "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","customRootDirectory","maintainers","dockerBaseImage","customImageName","entrypoint","onPostPackage","publishType","onPostSync"]
+    "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","customRootDirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync"],
+    
+    "if":{
+      "properties": { "deployType": { "const": "DockerDaemon" } }
+    },"then":{
+      "required": ["entrypoint","schedule"]
+      }
   }
+  
