@@ -55,10 +55,6 @@
       "type":["string","null"],
       "description": ""
     },
-    "customRootDirectory":{
-      "type":["string","null"],
-      "description": "Only For Java Envs"
-    },
     "maintainers":{
       "type":"string",
       "description": "Data for GeneXus  Format: Email1,Email2,..."
@@ -146,7 +142,7 @@
                   "description": ""
                 },
                 "envs":{
-                  "type":"array",
+                  "type":["array", "null"],
                   "description": "",
                   "items":{
                     "type":"object",
@@ -175,5 +171,5 @@
       }
     }
   },
-  "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","customRootDirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync"]
+  "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync"]
 }
