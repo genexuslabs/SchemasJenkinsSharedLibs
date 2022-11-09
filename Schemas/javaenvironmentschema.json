@@ -12,10 +12,6 @@
       "enum": ["jdk8","jdk11","jdk17", null],
       "description": "Only For Java Envs"
     },
-    "customRootDirectory":{
-      "type": ["string", "null"],
-      "description": "Only for Java Envs"
-    },
     "reorganizeTables":{
       "type":["object","null"],
       "description": "",
@@ -118,7 +114,6 @@
     "required": [
     "name",
     "jdkInstallationId",
-    "customRootDirectory",
     "reorganizeTables",
     "onPostBuildEnvironment",
     "servicesURL",
