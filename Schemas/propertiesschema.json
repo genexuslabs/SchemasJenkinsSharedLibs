@@ -80,17 +80,13 @@
               "type": "string",
               "description": "KbVersion in Gxserver"
             },
-            "kbDbServerInstance":{
-              "type": "string",
-              "description": ""
-            },
             "credentialsId": {
               "type": "string",
               "description": "Uniqe credentials id existing in Jenkins Credentials Scope"
             }
           },
             "propertyNames": true,
-            "required": ["url","kbName","kbVersion","kbDbServerInstance","credentialsId"],
+            "required": ["url","kbName","kbVersion","credentialsId"],
             "additionalProperties": true
         },
         "forceUpdateModules": {
