@@ -85,7 +85,7 @@
               "type":"string",
               "description": ""
             },
-            "nexusSecureUrl":{
+            "registryEndpoint":{
               "type":"string",
               "description": ""
             },
@@ -166,7 +166,7 @@
               }
             }
           },
-            "required": ["name","nexusSecureUrl","credentialsId","deployments"],
+            "required": ["name","registryEndpoint","credentialsId","deployments"],
             "minItems": 1
         }
       }
