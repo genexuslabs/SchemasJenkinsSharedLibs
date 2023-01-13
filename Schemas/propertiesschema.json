@@ -122,10 +122,11 @@
           }
         },
         "notify": {
-          "description": "Emails to notify  Format: Email1,Email2,...",
-          "type": ["string","null"]
+          "description": "",
+          "type": ["array","null"]
         }
-      },
+      },         
+    
         "propertyNames": true,
         "required": ["environments","server","notify","forceUpdateModules","removeWorkingCopy"],
         "additionalProperties": true
@@ -167,6 +168,62 @@
         ],
         "additionalProperties": true
       }
+    },
+    "modules": {
+      "type": ["array","null"],
+      "description": "",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": ""
+          },
+          "cshrpFilePath": {
+            "type": ["string","null"],
+            "description": ""
+          },
+          "javaFilePath": {
+            "type": ["string","null"],
+            "description": ""
+          }, 
+          "netCoreFilePath":{
+            "type":["string","null"],
+            "description": ""
+          },
+          "publishType": {
+            "type": ["array","null"],
+            "description": "",
+            "items":{
+              "type":"object",
+              "properties": {
+                "id" : {
+                  "type" :["string","null"],
+                  "description": ""
+                },
+                "serverId" : {
+                  "type" :["string","null"],
+                  "description": ""
+                },
+                "serverCredentialsId" : {
+                  "type" :["string","null"],
+                  "description": ""
+                }     
+              },
+              "required": ["id","serverId","serverCredentialsId"]
+            }
+          }
+        },
+        "propertyNames": true,
+        "required": [
+          "name",
+          "cshrpFilePath",
+          "javaFilePath",
+          "netCoreFilePath",
+          "publishType"
+        ],
+        "additionalProperties": true
+      }
     }
   },
   "propertyNames": true,
@@ -175,7 +232,8 @@
     "build",
     "genexus",
     "aws",
-    "databases"
+    "databases",
+    "modules"
   ],
   "additionalProperties": true,
   "default": {}
