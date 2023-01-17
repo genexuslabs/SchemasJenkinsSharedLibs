@@ -232,8 +232,7 @@
     "build",
     "genexus",
     "aws",
-    "databases",
-    "modules"
+    "databases"
   ],
   "additionalProperties": true,
   "default": {}
