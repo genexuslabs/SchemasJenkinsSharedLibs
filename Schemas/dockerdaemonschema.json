@@ -90,46 +90,46 @@
           "type":"object",
           "properties": {
             "name":{
-              "type":"string",
+              "type":["string","null"],
               "description": ""
             },
             "registryEndpoint":{
-              "type":"string",
+              "type":["string","null"],
               "description": ""
             },
             "credentialsId":{
-              "type":"string",
+              "type":["string","null"],
               "description": ""
             },
             "deployments":{
-              "type":"array",
+              "type":["array", "null"],
               "description": "",
               "items":{
                 "type":"object",
                 "properties": {
                   "id":{
                     "uniqueItems": true,
-                    "type":"string",
+                    "type":["string","null"],
                     "description": "Uniqe"
                   },
                   "containerNode":{
-                    "type":"string",
+                    "type":["string","null"],
                     "description": ""
                   },
                   "port":{
-                    "type":"string",
+                    "type":["string","null"],
                     "description": ""
                   },
                   "url":{
-                    "type":"string",
+                    "type":["string","null"],
                     "description": ""
                   },
                   "automaticDeployment":{
-                  "type":"boolean",
+                  "type":["boolean","null"],
                   "description": ""
                   },
                   "databaseId":{
-                    "type":"string",
+                    "type":["string","null"],
                     "description": ""
                   },
                   "gam": {
@@ -137,10 +137,10 @@
                     "type": ["object","null"],
                     "properties": {
                       "databaseId": {
-                        "type": "string"
+                        "type": ["string","null"]
                       },
                       "connectionKey": {
-                        "type": "string"
+                        "type": ["string","null"]
                       }
                     },
                       "required": ["databaseId","connectionKey"]
@@ -156,11 +156,11 @@
                       "type":"object",
                       "properties": {
                         "name":{
-                          "type":"string",
+                          "type":["string","null"],
                           "description": ""
                         },
                         "value":{
-                          "type":"string",
+                          "type":["string","null"],
                           "description": ""
                         }
                       },
