@@ -55,6 +55,12 @@
         "type":["string","null"],
         "description": ""
       },
+      "webAppLocation":{
+        "type":"string",
+        "description": ""
+      },
+      
+
       "maintainers":{
         "type":"string",
         "description": "Data for GeneXus  Format: Email1,Email2,..."
@@ -87,7 +93,8 @@
         "type":["array", "null"],
         "description": "",
         "items":{
-          "type":"object",
+          "oneOf": [{
+            "type":"object",
           "properties": {
             "name":{
               "type":["string","null"],
@@ -146,8 +153,14 @@
                       "required": ["databaseId","connectionKey"]
                   },
                   "gxflow":{
-                    "type": ["string", "null"],
-                    "description": ""
+                    "description": "",
+                    "type": ["object","null"],
+                    "properties": {
+                      "databaseId": {
+                        "type": "string"
+                      }
+                    },
+                      "required": ["databaseId"]
                   },
                   "envs":{
                     "type":["array", "null"],
@@ -176,6 +189,17 @@
           },
             "required": ["name","registryEndpoint","credentialsId","deployments"],
             "minItems": 1
+          },{
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "registryEndpoint": {"type": "string"},
+              "registryImageName": {"type": "string"},
+              "awsProfile": {"type": "string"}
+            },
+            "required": ["name", "registryEndpoint", "registryImageName", "awsProfile"]
+          }]
+          
         }
       }
     },
@@ -184,7 +208,7 @@
     "if":{
       "properties": { "deployType": { "const": "DockerDaemon" } }
     },"then":{
-      "required": ["entrypoint","schedule"]
+      "required": ["entrypoint","schedule","webAppLocation"]
       }
   }
   

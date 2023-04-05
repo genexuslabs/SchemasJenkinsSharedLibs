@@ -11,6 +11,7 @@
     { "$ref": "servicesschema.json" },
     { "$ref": "angularserviceschema.json" },
     { "$ref": "dockerimageschema.json" },
-    { "$ref": "awsserverlessschema.json" }
+    { "$ref": "awsserverlessschema.json" },
+    { "$ref": "azureschema.json" }  
   ]    
 }

@@ -63,6 +63,11 @@
       "type": ["string", "null"],
       "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostBuildEnvironment"
     },
+    "waSeparatedGXFlowDatastore":{
+      "type": ["boolean", "null"],
+      "description": ""
+    },
+
     "servicesURL":{
       "type": ["string", "null"],
       "description": ""
@@ -108,17 +113,21 @@
         "required": ["path"],
         "minItems": 1
       }
+    },
+    "OnPostScript":{
+      "type": ["string", "null"],
+      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostScript"
     }
   },
-  
     "required": [
     "name",
-    "jdkInstallationId",
+    "waSeparatedGXFlowDatastore",
     "reorganizeTables",
     "onPostBuildEnvironment",
     "servicesURL",
     "testing",
-    "deploymentUnits"
+    "deploymentUnits",
+    "OnPostScript"
     ],
   "additionalProperties": true,
   "default": {},

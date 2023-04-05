@@ -1,0 +1,58 @@
+{   
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Azure-Service.yaml schema",
+  "title": "DU Azure",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "DeploymentUnit name"
+    },
+    "deployType":{
+      "type":"string",
+      "default": "Azure",
+      "description": ""
+    },
+    "onPrePackage":{
+      "type":["string","null"],
+      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPrePackage"
+    },
+    "customGXDProj":{
+      "type":["string","null"],
+      "description": "Reference to a custom gxdproj file"
+    },
+    "applicationServer":{
+      "type":"string",
+      "description": "Data for GeneXus"
+    },
+    "includeGAM":{
+      "type":"boolean",
+      "description": ""
+    },
+    "includeGXFlow":{
+      "type":"boolean",
+      "description": ""
+    },
+    "appUpdate":{
+      "type":"string",
+      "enum": ["NONE", "Minor Change", "Major Change"],
+      "description": ""
+    },
+    "enableKBN":{
+      "type":"boolean",
+      "description": ""
+    },
+    
+    "onPostPackage":{
+      "type":["string","null"],
+      "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostPackage"
+    },
+    "publishSettings":{
+        "type":["string"],
+        "description": ""
+      }
+
+
+  },
+  "required": ["name","deployType","onPrePackage","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","onPostPackage","publishSettings"]
+}

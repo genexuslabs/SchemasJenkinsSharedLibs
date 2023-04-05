@@ -79,7 +79,8 @@
       "type":["array", "null"],
       "description": "",
       "items":{
-        "type":"object",
+        "oneOf": [{
+          "type":"object",
         "properties": {
           "name":{
             "type":"string",
@@ -138,8 +139,14 @@
                     "required": ["databaseId","connectionKey"]
                 },
                 "gxflow":{
-                  "type": ["string", "null"],
-                  "description": ""
+                  "description": "",
+                  "type": ["object","null"],
+                  "properties": {
+                    "databaseId": {
+                      "type": "string"
+                    }
+                  },
+                    "required": ["databaseId"]
                 },
                 "envs":{
                   "type":["array", "null"],
@@ -168,6 +175,17 @@
         },
           "required": ["name","registryEndpoint","credentialsId","deployments"],
           "minItems": 1
+        },{
+          "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "registryEndpoint": {"type": "string"},
+              "registryImageName": {"type": "string"},
+              "awsProfile": {"type": "string"}
+            },
+            "required": ["name", "registryEndpoint", "registryImageName", "awsProfile"]
+        }]
+        
       }
     }
   },
