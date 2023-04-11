@@ -114,7 +114,7 @@
         "minItems": 1
       }
     },
-    "OnPostScript":{
+    "onPostScript":{
       "type": ["string", "null"],
       "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostScript"
     }
@@ -127,7 +127,7 @@
     "servicesURL",
     "testing",
     "deploymentUnits",
-    "OnPostScript"
+    "onPostScript"
     ],
   "additionalProperties": true,
   "default": {},
