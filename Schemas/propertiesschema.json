@@ -8,6 +8,10 @@
       "type": "string",
       "description": "Uniqe name for the project"
     },
+    "webAppLocation":{
+      "type":"string",
+      "description": ""
+    },
     "aws": {
       "type": ["array","null"],
       "description": "",
@@ -229,6 +233,7 @@
   "propertyNames": true,
   "required": [
     "name",
+    "webAppLocation",
     "build",
     "genexus",
     "aws",
