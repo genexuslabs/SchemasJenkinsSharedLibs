@@ -56,7 +56,7 @@
       "description": ""
     },
     "webAppLocation":{
-      "type":"string",
+      "type":["string","null"],
       "description": ""
     },
     "maintainers":{

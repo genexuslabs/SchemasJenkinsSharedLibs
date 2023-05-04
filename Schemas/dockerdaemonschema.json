@@ -56,11 +56,9 @@
         "description": ""
       },
       "webAppLocation":{
-        "type":"string",
+        "type":["string","null"],
         "description": ""
       },
-      
-
       "maintainers":{
         "type":"string",
         "description": "Data for GeneXus  Format: Email1,Email2,..."
