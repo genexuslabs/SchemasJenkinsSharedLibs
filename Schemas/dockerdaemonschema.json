@@ -201,12 +201,12 @@
         }
       }
     },
-    "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync"],
+    "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync","webAppLocation"],
     
     "if":{
       "properties": { "deployType": { "const": "DockerDaemon" } }
     },"then":{
-      "required": ["entrypoint","schedule","webAppLocation"]
+      "required": ["entrypoint","schedule"]
       }
   }
   

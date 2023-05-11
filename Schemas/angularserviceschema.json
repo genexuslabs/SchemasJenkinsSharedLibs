@@ -55,6 +55,10 @@
       "type":["string","null"],
       "description": ""
     },
+    "webAppLocation":{
+      "type":["string","null"],
+      "description": ""
+    },
     "maintainers":{
       "type":"string",
       "description": "Data for GeneXus  Format: Email1,Email2,..."
@@ -189,5 +193,5 @@
       }
     }
   },
-  "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync"]
+  "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync","webAppLocation"]
 }
