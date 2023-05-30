@@ -197,10 +197,6 @@
             "items":{
               "type":"object",
               "properties": {
-                "id" : {
-                  "type" :["string","null"],
-                  "description": ""
-                },
                 "serverId" : {
                   "type" :["string","null"],
                   "description": ""
@@ -210,7 +206,7 @@
                   "description": ""
                 }     
               },
-              "required": ["id","serverId","serverCredentialsId"]
+              "required": ["serverId","serverCredentialsId"]
             }
           }
         },
