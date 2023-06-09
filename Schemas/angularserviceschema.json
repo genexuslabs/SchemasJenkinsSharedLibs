@@ -79,6 +79,10 @@
       "type":["string","null"],
       "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostSync"
     },
+    "archiveArtifacts":{
+      "type":"boolean",
+      "description": "Keep artifacts in Jenkins Package/Deploy Jobs"
+    },
     "publishType":{
       "type":["array", "null"],
       "description": "",
@@ -193,5 +197,5 @@
       }
     }
   },
-  "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync","webAppLocation"]
+  "required": ["name","deployType","onPrePackage","customSyncPath","customGXDProj","applicationServer","includeGAM","includeGXFlow","appUpdate","enableKBN","customDockerFile","urlSubdirectory","maintainers","dockerBaseImage","customImageName","onPostPackage","publishType","onPostSync","webAppLocation", "archiveArtifacts"]
 }
