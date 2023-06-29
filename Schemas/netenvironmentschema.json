@@ -109,6 +109,10 @@
       "type": ["string", "null"],
       "description": "Relative file path to <extensibility>.groovy from git repo root with method onPostScript"
     },
+    "logLevel":{
+      "type": ["string"],
+      "description": "Log Level, available options: [Off, Fatal, Error, Warn, Info, Debug, All]"
+    },
     "storageProvider": {
       "type": ["object","null"],
       "properties": {
@@ -159,7 +163,8 @@
     "testing",
     "deploymentUnits",
     "onPostScript",
-    "storageProvider"
+    "storageProvider",
+    "logLevel"
     ],
   "additionalProperties": true,
   "default": {},
