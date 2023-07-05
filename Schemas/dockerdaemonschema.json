@@ -137,6 +137,14 @@
                   "type":["boolean","null"],
                   "description": ""
                   },
+                  "logLevel":{
+                    "type": "string",
+                    "description": "Log Level, available options: [Off, Fatal, Error, Warn, Info, Debug, All]"
+                  },
+                  "logging":{
+                    "type": "string",
+                    "description": "Url of Graylog"
+                  },
                   "databaseId":{
                     "type":["string","null"],
                     "description": ""
