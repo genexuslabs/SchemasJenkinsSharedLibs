@@ -165,7 +165,6 @@
   },
     "required": [
     "name",
-    "waSeparatedGXFlowDatastore",
     "reorganizeTables",
     "onPostBuildEnvironment",
     "servicesURL",
