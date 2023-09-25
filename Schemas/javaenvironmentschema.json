@@ -12,6 +12,10 @@
       "enum": ["jdk8","jdk11","jdk17", null],
       "description": "Only For Java Envs"
     },
+    "jdbcLogPath": {
+      "type": "string", 
+      "description": "Path to client.log inside the container"
+    },
     "reorganizeTables":{
       "type":["object","null"],
       "description": "",
